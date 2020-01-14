@@ -1,0 +1,109 @@
+$theme: #29adb2;
+$selected: #6272a4;
+$white: #f8f8f2;
+$cyan: #8be9fd;
+$dark: #22394A;
+$dark-primary: #072C40;
+$dark-sub: #222;
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 100%;
+  background: $dark;
+  overflow: overlay;
+  -ms-overflow-style: none; // IE에서 스크롤바 감춤
+  &::-webkit-scrollbar { 
+    display: none !important; // 윈도우 크롬 등
+  }
+  .image-wrapper {
+    display: flex;
+    padding: 20px 0;
+    background: $dark-primary;
+    width: 100%;
+    justify-content: center;
+    
+    img {
+      max-width: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  .nav-menu{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .dropdown{
+      width: 100%;
+      flex-direction: column;
+      height: 80px !important;
+
+      a.dropdown-label{
+        background: transparent;
+        border: transparent;
+        color: $white;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        div {
+          font-size: 16px;
+          padding: 0 20px;
+        }
+      }
+      a.dropdown-label:hover {
+        color: $white;
+        background: $theme;
+      }
+    }
+
+    .dropdown.active{
+
+      a.dropdown-label{
+        background: $theme;
+      }
+    }
+    
+    .dropdown-menu-list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      
+      a :hover {
+        background: $dark-sub;
+        text-decoration: none;
+      }
+
+      a.active {
+        background: $dark-sub;
+        text-decoration: none;
+      }
+
+      li {
+        height: 60px;
+        padding: 20px 0;
+        color: $white;
+        
+        div {
+          margin-left: 60px;
+          
+          img {
+            padding-bottom: 3px;
+            margin-right: 10px;
+          }
+        }
+
+        
+      }
+
+    }
+
+  }
+  
+}

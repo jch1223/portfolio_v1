@@ -1,0 +1,34 @@
+$theme: #29adb2;
+$white: #fff;
+$gray: #ccc;
+
+// html,
+// body {
+//   height: 100%;
+// }
+
+// #root {
+//   height: 100%;
+// }
+
+.backgroundColor {
+  background-color: $theme;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.contents {
+  flex: 8;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}

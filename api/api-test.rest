@@ -1,0 +1,52 @@
+### 페이지 로드할 때 요청
+
+GET http://company.chabot.kr:3000/api/notice HTTP/1.1
+
+
+### 더보기 버튼을 누를 때. offset 정도만 스테이트 관리해주면 될거 같습니다.
+
+GET http://company.chabot.kr:3000/api/notice?limit=2&offset=2 HTTP/1.1
+
+
+### 새 글 작성
+
+POST http://company.chabot.kr:3000/api/notice HTTP/1.1
+Content-Type: application/json
+
+{
+  "title" : "ㅈㅔ목",
+  "content": "제곧zdfszddfgdfgfsdf내"
+}
+
+
+### get details: 글을 눌렀을 때 상세 정보
+
+GET http://company.chabot.kr:3000/api/notice/34 HTTP/1.1
+
+
+
+### publish: 새 글 작성시 기본적으로 비공개 상태, 이후 아래 주소와 같이 POST 요청이 들어오면
+
+POST http://company.chabot.kr:3000/api/notice/34 HTTP/1.1
+
+
+### delete
+
+DELETE http://company.chabot.kr:3000/api/notice/34 HTTP/1.1
+
+
+### file upload 
+
+POST http://company.chabot.kr:3000/api/file HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="news_img"; filename="전효성.jpg"
+Content-Type: image/png
+
+< ./전효성.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+GET http://company.chabot.kr:3000/api/file/upload_6d3292f7321c55b94f2b3ab5afb277c7
