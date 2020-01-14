@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Router, { useRouter } from 'next/router';
-import Layout from '../../../components/Layout';
+import Layout from '../../../layout/Layout';
 import ContentTop from '../../../components/ContentTop';
 import Container from '../../../components/Container';
 import ChabotButton from '../../../components/ChabotButton';
@@ -78,7 +78,8 @@ const Notice = props => {
         title={'Notice'}
         url={'/static/notice'}
         img={'7_top_banner.jpg'}
-        mImg={'m_7_top_banner.jpg'}></ContentTop>
+        mImg={'m_7_top_banner.jpg'}
+      ></ContentTop>
       <NoticeContentStyled>
         <Container>
           <ContainerStyled>

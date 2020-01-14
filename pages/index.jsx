@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Layout from '../components/Layout';
+import Layout from '../layout/Layout';
 import AppButton from '../components/AppButton';
 import ScrollTop from '../components/ScrollTop';
 import Link from 'next/link';
@@ -250,7 +250,8 @@ const Index = () => {
                 className='copy2'
                 animateIn='fadeInUp'
                 delay={500}
-                animateOnce={true}>
+                animateOnce={true}
+              >
                 <div id='copy2'>
                   운전하는 <br />
                   모든순간
@@ -266,7 +267,8 @@ const Index = () => {
           className='secondBanner'
           offset={500}
           animateIn='fadeIn'
-          animateOnce={true}>
+          animateOnce={true}
+        >
           <Container>
             <div className='secondCopy'>
               <ScrollAnimation className='copy1' offset={0} animateIn='fadeInUp' animateOnce={true}>
@@ -279,7 +281,8 @@ const Index = () => {
                 offset={0}
                 animateIn='fadeInUp'
                 delay={400}
-                animateOnce={true}>
+                animateOnce={true}
+              >
                 <div>CHABOT</div>
               </ScrollAnimation>
               <ScrollAnimation
@@ -287,7 +290,8 @@ const Index = () => {
                 offset={0}
                 animateIn='fadeInUp'
                 delay={800}
-                animateOnce={true}>
+                animateOnce={true}
+              >
                 <div>
                   차봇은 자동차 관리, 금융, 보험 등 <br />
                   모든 자동차 서비스를 하나로 묶는

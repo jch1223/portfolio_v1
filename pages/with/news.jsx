@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import Router from 'next/router';
-import Layout from '../../components/Layout';
+import Layout from '../../layout/Layout';
 import ContentTop from '../../components/ContentTop';
 import Container from '../../components/Container';
 import ChabotButton from '../../components/ChabotButton';
-import fetch from 'isomorphic-unfetch';
 import styled from 'styled-components';
-import { API_URL } from '../../config/config';
 
 const NewsStyled = styled.div`
   .top:hover {
@@ -139,14 +137,6 @@ const NewsStyled = styled.div`
   }
 `;
 
-const ImgStyled = styled.div`
-  background: url(${props => props.src}) no-repeat 50%;
-  margin: auto;
-  max-width: 420px;
-  height: 100%;
-  background-size: cover;
-`;
-
 const NewsContent = props => {
   const urlHandler = () => {
     window.open(props.newsUrl, 'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes');
@@ -165,25 +155,17 @@ const NewsContent = props => {
 const News = props => {
   const [focus, setFocus] = useState('with');
   const [subFocus, setSubFocus] = useState('news');
-  const [topItem, setTopItem] = useState('news');
-
-  useEffect(() => {
-    setTopItem(props.items[0]);
-    console.log(topItem);
-  }, [topItem]);
 
   const urlHandler = () => {
-    window.open(
-      topItem.newsUrl,
-      'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes'
-    );
+    window.open('menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes');
   };
 
   return (
     <Layout
       title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT press'}
       focus={focus}
-      subFocus={subFocus}>
+      subFocus={subFocus}
+    >
       <ContentTop
         title={'Press'}
         url={'/static/press'}
@@ -194,56 +176,16 @@ const News = props => {
         <div className='top' onClick={urlHandler}>
           <div className='topWrap'>
             <div className='left'>
-              <div className='img'>
-                <ImgStyled src={topItem.imgUrl}></ImgStyled>
-              </div>
+              <div className='img'></div>
             </div>
             <Container>
-              <div className='right paddingL20'>
-                <h1 className='title'>{topItem.title}</h1>
-                <div className='content'>{topItem.content}</div>
-              </div>
+              <div className='right paddingL20'></div>
             </Container>
           </div>
         </div>
-        <Container>
-          <div className='paddingL20'>
-            {props.items.map((item, index) => {
-              if (item.isDeleted === 'N' && index !== 0) {
-                return (
-                  <NewsContent
-                    key={item.index}
-                    company={item.company}
-                    date={item.createdAt}
-                    title={item.title}
-                    newsUrl={item.newsUrl}
-                  />
-                );
-              }
-            })}
-          </div>
-        </Container>
-        {props.cnt[0].cnt > 6 && props.cnt[0].cnt > props.limit ? (
-          <div className='buttonWrap'>
-            <ChabotButton
-              name='더보기'
-              onClick={() => Router.push(`/with/news?limit=${props.limit + 5}`)}></ChabotButton>
-          </div>
-        ) : (
-          <div className='buttonWrap'></div>
-        )}
       </NewsStyled>
     </Layout>
   );
-};
-
-News.getInitialProps = async function({ query: { limit = 6 } }) {
-  const res = await fetch(`${API_URL}/api/press?limit=${limit}`);
-  const items = await res.json();
-
-  console.log(items);
-
-  return { ...items, limit: parseInt(limit, 10) };
 };
 
 export default News;

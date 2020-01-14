@@ -1,6 +1,6 @@
 import Router from 'next/router';
 import { useState } from 'react';
-import Layout from '../../components/Layout';
+import Layout from '../../layout/Layout';
 import Container from '../../components/Container';
 import ContentTop from '../../components/ContentTop';
 import OutArrowSlide from '../../components/OutArrowSlide';
@@ -206,12 +206,14 @@ const People = props => {
     <Layout
       title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT people'}
       focus={focus}
-      subFocus={subFocus}>
+      subFocus={subFocus}
+    >
       <ContentTop
         title='People'
         url={'/static/people'}
         img={'4_top_banner.jpg'}
-        mImg={'m_4_top_banner.jpg'}></ContentTop>
+        mImg={'m_4_top_banner.jpg'}
+      ></ContentTop>
 
       <PeopleStyled>
         <Container>
@@ -245,61 +247,71 @@ const People = props => {
               number={1}
               title={'HONORABLE'}
               subtitle={'고귀한 성품을 가진'}
-              decs={'큰소리는 산에 올라가서 지르자'}></CardBox>
+              decs={'큰소리는 산에 올라가서 지르자'}
+            ></CardBox>
             <CardBox
               nth={'second'}
               number={2}
               title={'CONFIDENCE'}
               subtitle={'고객의 신뢰를 얻는'}
-              decs={'고객으로부터 감탄사가 나오게 하자'}></CardBox>
+              decs={'고객으로부터 감탄사가 나오게 하자'}
+            ></CardBox>
             <CardBox
               nth={'third'}
               number={3}
               title={'CONSIDERATION'}
               subtitle={'상처를 주지 않는'}
-              decs={'없어지지 않는 흔적은 남기지 말자'}></CardBox>
+              decs={'없어지지 않는 흔적은 남기지 말자'}
+            ></CardBox>
             <CardBox
               nth={'fourth'}
               number={4}
               title={'HUMANENESS'}
               subtitle={'인정을 베푸는'}
-              decs={'옆 사람의 휴지통을 체크하자'}></CardBox>
+              decs={'옆 사람의 휴지통을 체크하자'}
+            ></CardBox>
             <CardBox
               nth={'fifth'}
               number={5}
               title={'TOGETHER'}
               subtitle={'다함께 뛰는'}
-              decs={'경쟁은 상대가 있어야 가능하다'}></CardBox>
+              decs={'경쟁은 상대가 있어야 가능하다'}
+            ></CardBox>
             <CardBox
               nth={'sixth'}
               number={6}
               title={'PROFIT'}
               subtitle={'이윤을 창출하는'}
-              decs={'회사가 살아야 우리 가족이 산다'}></CardBox>
+              decs={'회사가 살아야 우리 가족이 산다'}
+            ></CardBox>
             <CardBox
               nth={'seventh'}
               number={7}
               title={'ROLE'}
               subtitle={'이끌거나 따르거나 떠나거나'}
-              decs={'답이 없는 불만을 품었다면 회사를 떠나자'}></CardBox>
+              decs={'답이 없는 불만을 품었다면 회사를 떠나자'}
+            ></CardBox>
             <CardBox
               nth={'eighth'}
               number={8}
               title={'FAMILY'}
               subtitle={'가족의 칭찬과 인정을 받는'}
-              decs={'가족은 회사를 다니는 첫째 이유다 '}></CardBox>
+              decs={'가족은 회사를 다니는 첫째 이유다 '}
+            ></CardBox>
             <CardBox
               nth={'ninth'}
               number={9}
               title={'TRUTH'}
               subtitle={'투명한'}
-              decs={'진실은 반드시 밝혀진다'}></CardBox>
+              decs={'진실은 반드시 밝혀진다'}
+            ></CardBox>
             <CardBox
               nth={'tenth'}
               number={10}
               title={'PURPOSE'}
               subtitle={'높은 목적을 가진'}
-              decs={'A company that works with God’s heart'}></CardBox>
+              decs={'A company that works with God’s heart'}
+            ></CardBox>
           </Container>
         </CardBoxStyled>
 

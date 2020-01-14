@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import Layout from '../layout/Layout';
 import Container from '../components/Container';
 const Terms = () => {
   return (

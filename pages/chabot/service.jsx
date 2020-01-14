@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Layout from '../../components/Layout';
+import Layout from '../../layout/Layout';
 import Container from '../../components/Container';
 import ServiceModal from '../../components/ServiceModal';
 import ContentTop from '../../components/ContentTop';
@@ -48,12 +48,14 @@ const Service = props => {
     <Layout
       title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT service'}
       focus={focus}
-      subFocus={subFocus}>
+      subFocus={subFocus}
+    >
       <ContentTop
         title='Service'
         url={'/static/service'}
         img={'2_top_banner.jpg'}
-        mImg={'m_2_top_banner.jpg'}></ContentTop>
+        mImg={'m_2_top_banner.jpg'}
+      ></ContentTop>
       <Container>
         <TabTop></TabTop>
         <MidContentStyeld className='midContent'>

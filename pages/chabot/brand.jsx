@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Layout from '../../components/Layout';
+import Layout from '../../layout/Layout';
 import Container from '../../components/Container';
 import ContentTop from '../../components/ContentTop';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -147,12 +147,14 @@ const Brand = props => {
     <Layout
       title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT brand'}
       focus={focus}
-      subFocus={subFocus}>
+      subFocus={subFocus}
+    >
       <ContentTop
         title='Brand'
         url={'/static/brand'}
         img={'3_top_banner.jpg'}
-        mImg={'m_3_top_banner.jpg'}></ContentTop>
+        mImg={'m_3_top_banner.jpg'}
+      ></ContentTop>
 
       <ContentStyled>
         <div className='top'>

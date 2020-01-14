@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import Layout from '../layout/Layout';
 import Container from '../components/Container';
 import UserReview from '../components/UserReview';
 import ChabotButton from '../components/ChabotButton';

@@ -1,16 +1,9 @@
 import { useState } from 'react';
-import { Row, Col } from 'reactstrap';
-import Layout from '../../components/Layout';
-import Container from '../../components/Container';
+import Layout from '../../layout/Layout';
 import RecruitModal from '../../components/RecruitModal';
 import ContentTop from '../../components/ContentTop';
-import dynamic from 'next/dynamic';
 import fetch from 'isomorphic-unfetch';
 import styled from 'styled-components';
-
-const HireSlide = dynamic(() => import('../../components/HireSlide'), { ssr: false });
-
-import { API_URL } from '../../config/config';
 
 const SlideContainerStyled = styled.div`
   max-width: 1100px;
@@ -93,15 +86,6 @@ const Recruit = props => {
   const [layer, setLayer] = useState(false);
   const [content, setcontent] = useState([]);
 
-  const layerHandler = e => {
-    setLayer(true);
-    // console.log(e.currentTarget.id);
-    let select = props.items.filter(item => {
-      return item.index == e.currentTarget.id;
-    });
-    setcontent(select);
-  };
-
   const layerClose = e => {
     setLayer(!layer);
   };
@@ -110,7 +94,8 @@ const Recruit = props => {
     <Layout
       title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT recruit'}
       focus={focus}
-      subFocus={subFocus}>
+      subFocus={subFocus}
+    >
       <ContentTop
         title={'Recruit'}
         url={'/static/recruit'}
@@ -122,7 +107,6 @@ const Recruit = props => {
         <h2 className='conTitle'>
           <span>무한한 가능성의</span> 당신을 기다립니다
         </h2>
-        <HireSlide layerHandler={layerHandler} items={props.items}></HireSlide>
       </SlideContainerStyled>
 
       <ContentStyled>
@@ -141,16 +125,6 @@ const Recruit = props => {
       )}
     </Layout>
   );
-};
-
-Recruit.getInitialProps = async function({ asPath }) {
-  console.log(asPath);
-  const res = await fetch(`${API_URL}/api/recruit`);
-  const items = await res.json();
-
-  console.log('items', items);
-
-  return { items };
 };
 
 export default Recruit;
