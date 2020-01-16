@@ -102,7 +102,7 @@ const Header = ({ focus, subFocus }) => {
       <Container>
         <Link href='/' prefetch={false}>
           <a className='logoImg'>
-            <img src='/static/top_logo.png' alt='로고이미지' />
+            <img src='/static/logo/jch_LOGO.png' alt='로고이미지' />
           </a>
         </Link>
 

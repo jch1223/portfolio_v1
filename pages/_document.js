@@ -27,50 +27,30 @@ export default class MyDocument extends Document {
           {/* 메타테그 */}
           <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'></meta>
           <meta name='naver-site-verification' content='5a2b133713b38a2581d3bc0c5a223fa05f542834' />
-          <meta name='application-name' content='자동차로 하나되는 세상, 차봇 ㅣ CHABOT Services' />
-          <meta
-            name='msapplication-tooltip'
-            content='자동차로 하나되는 세상, 차봇 ㅣ CHABOT Services'
-          />
+          <meta name='application-name' content='프론트엔드 개발자 장철희 ㅣ JangChulHee' />
+          <meta name='msapplication-tooltip' content='프론트엔드 개발자 장철희 ㅣ JangChulHee' />
           <meta
             id='meta_og_title'
             property='og:title'
-            content='자동차로 하나되는 세상, 차봇 ㅣ CHABOT Services'
+            content='프론트엔드 개발자 장철희 ㅣ JangChulHee'
           />
-          <meta name='description' content='자동차로 하나되는 세상, 차봇 ㅣ CHABOT Services' />
-          <meta
-            property='og:description'
-            content='자동차로 하나되는 세상, 차봇 ㅣ CHABOT Services'
-          />
-          <meta
-            id='og:image'
-            property='og:image'
-            content='https://www.chabot.kr/images/chabot_logo.gif?param'
-          />
-          <meta
-            name='keywords'
-            content='차봇,자동차 보험, 다이렉트 보험, 보험, 보험다모아, 자동차보험 비교견적'
-          />
-          <link rel='icon' href='/static/chabot_favicon.gif' type='image/x-icon' />
+          <meta name='description' content='프론트엔드 개발자 장철희 ㅣ JangChulHee' />
+          <meta property='og:description' content='프론트엔드 개발자 장철희 ㅣ JangChulHee' />
+          <meta name='keywords' content='프론트엔드, 개발자, 장철희' />
+          <link rel='icon' href='/static/logo/favicon.PNG' type='image/x-icon' />
           <link
             rel='stylesheet'
             href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'
           />
-          {/* <link
-            rel='stylesheet'
-            href='//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css'
-          ></link> */}
           <link
             href='https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap'
-            rel='stylesheet'></link>
+            rel='stylesheet'
+          ></link>
           <link
             rel='stylesheet'
             type='text/css'
             href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'
           />
-          {/* <link
-            href='https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap'
-            rel='stylesheet'></link> */}
           {this.props.styleTags}
         </Head>
 
