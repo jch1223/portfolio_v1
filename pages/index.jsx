@@ -237,7 +237,7 @@ const Index = () => {
   }
 
   return (
-    <Layout title='자동차로 하나되는 세상, 차봇 ㅣ CHABOT' focus={focus}>
+    <Layout focus={focus}>
       {/* <AppButton></AppButton> */}
       <MainBannerStyled>
         <ScrollAnimation className='mainBanner' animateIn='fadeIn' animateOnce={true}>
@@ -338,12 +338,12 @@ const Index = () => {
         </Container>
       </BrandStyled>
 
-      {/* <Container>
+      <Container>
         <ReviewTitle className='reviewTitle'>
           <h2>사용자 후기</h2>
         </ReviewTitle>
       </Container>
-      <ReviewSlide></ReviewSlide> */}
+      <ReviewSlide></ReviewSlide>
     </Layout>
   );
 };

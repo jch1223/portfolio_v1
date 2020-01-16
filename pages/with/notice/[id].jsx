@@ -7,7 +7,6 @@ import ChabotButton from '../../../components/ChabotButton';
 import parse from 'html-react-parser';
 import styled from 'styled-components';
 import fetch from 'isomorphic-unfetch';
-import { API_URL } from '../../../config/config';
 
 const NoticeContentStyled = styled.div`
   margin-top: 50px;

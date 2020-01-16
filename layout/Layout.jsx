@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Footer from '../components/Footer';
+import Footer from './Footer';
 import dynamic from 'next/dynamic';
 
+import config from '../config/config';
+
 const Hamburger = dynamic(() => import('../components/Hamburger'), { ssr: false });
-const Header = dynamic(() => import('../components/Header'), { ssr: false });
+const Header = dynamic(() => import('./Header'), { ssr: false });
 const ScrollTop = dynamic(() => import('../components/ScrollTop'), { ssr: false });
 
 import styled from 'styled-components';
@@ -14,7 +16,7 @@ const ContentStyled = styled.div`
   min-height: calc(100vh - 360px);
 `;
 
-export default ({ children, title = 'chabot', focus, subFocus }) => {
+export default ({ children, title = config.title, focus, subFocus }) => {
   const size = useWindowSize();
 
   function useWindowSize() {
