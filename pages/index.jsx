@@ -39,13 +39,15 @@ const MainBannerStyled = styled.div`
   .mainCopy {
     float: right;
     margin-top: -100px;
-    margin-right: 110px;
     font-size: 70px;
   }
   .copy2 {
     color: white;
     font-weight: bold;
     /* text-shadow: 2px 2px 6px black; */
+  }
+  #copy2 {
+    text-align: right;
   }
 
   .slide {
@@ -244,7 +246,7 @@ const Index = () => {
           <Container>
             <div className='mainCopy'>
               <ScrollAnimation className='copy1' animateIn='fadeInUp' animateOnce={true}>
-                <div id='copy1'>당신이</div>
+                <div id='copy1'> FRONTEND DEVELOPER</div>
               </ScrollAnimation>
               <ScrollAnimation
                 className='copy2'
@@ -252,10 +254,7 @@ const Index = () => {
                 delay={500}
                 animateOnce={true}
               >
-                <div id='copy2'>
-                  운전하는 <br />
-                  모든순간
-                </div>
+                <div id='copy2'>JANG CHUL HEE</div>
               </ScrollAnimation>
             </div>
           </Container>
@@ -273,7 +272,7 @@ const Index = () => {
             <div className='secondCopy'>
               <ScrollAnimation className='copy1' offset={0} animateIn='fadeInUp' animateOnce={true}>
                 <div>
-                  당신의 든든한 <br></br> 자동차 서비스 파트너
+                  FRONTEND DEVELOPER <br></br> JANG CHUL HEE
                 </div>
               </ScrollAnimation>
               <ScrollAnimation
