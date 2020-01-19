@@ -205,10 +205,10 @@ const People = props => {
   return (
     <Layout focus={focus} subFocus={subFocus}>
       <ContentTop
-        title='People'
-        url={'/static/people'}
-        img={'4_top_banner.jpg'}
-        mImg={'m_4_top_banner.jpg'}
+        title='Who am I'
+        url={'/static'}
+        img={'top_banner.jpg'}
+        mImg={'top_banner.jpg'}
       ></ContentTop>
 
       <PeopleStyled>

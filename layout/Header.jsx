@@ -102,7 +102,7 @@ const Header = ({ focus, subFocus }) => {
       <Container>
         <Link href='/' prefetch={false}>
           <a className='logoImg'>
-            <img src='/static/logo/jch_LOGO.png' alt='로고이미지' />
+            <img src='/static/logo/logo.png' alt='로고이미지' />
           </a>
         </Link>
 
@@ -125,23 +125,23 @@ const Header = ({ focus, subFocus }) => {
             </li>
 
             <li>
-              <Link href='/intro/service' prefetch={false}>
-                <a
-                  onClick={subMenuHandler}
-                  className={subFocus === 'service' ? 'subFocus' : 'service'}
-                >
-                  서비스
-                </a>
-              </Link>
-            </li>
-
-            <li>
               <Link href='/intro/people' prefetch={false}>
                 <a
                   onClick={subMenuHandler}
                   className={subFocus === 'people' ? 'subFocus' : 'people'}
                 >
-                  사람들
+                  스킬
+                </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href='/intro/service' prefetch={false}>
+                <a
+                  onClick={subMenuHandler}
+                  className={subFocus === 'service' ? 'subFocus' : 'service'}
+                >
+                  프로젝트
                 </a>
               </Link>
             </li>

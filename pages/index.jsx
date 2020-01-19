@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import Layout from '../layout/Layout';
-import AppButton from '../components/AppButton';
-import ScrollTop from '../components/ScrollTop';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Button } from 'reactstrap';
 import ScrollAnimation from 'react-animate-on-scroll';
 import dynamic from 'next/dynamic';
-
 import Container from '../components/Container';
+
+import config from '../config/config';
 
 const ReviewSlide = dynamic(() => import('../components/ReviewSlide'), { ssr: false });
 
@@ -36,7 +35,7 @@ const MainBannerStyled = styled.div`
     width: 100%;
     height: 600px;
     margin-top: 300px;
-    background: url('/static/index/main_banner.jpg') no-repeat 50% 0;
+    background: url('/static/index/main_banner_1.jpg') no-repeat 50% 0;
   }
   .mainCopy {
     float: right;
@@ -61,7 +60,7 @@ const MainBannerStyled = styled.div`
       height: 260px;
       background-color: #e2e2e2;
       /* no-repeat 제거 -> 이미지 크기가 확정이 안나서 일단 가안으로 확인 하기 위해 */
-      background: url('/static/index/m_main_banner.jpg') 50% 0;
+      background: url('/static/index/mobile/m_main_banner_1.jpg') 50% 0;
     }
     .mainCopy {
       float: left;
@@ -74,7 +73,7 @@ const MainBannerStyled = styled.div`
 const SecBannerStyled = styled.div`
   .secondBanner {
     height: 973px;
-    background: url('/static/index/second_banner.jpg') no-repeat 50% 0;
+    background: url('/static/index/main_banner_2.jpg') no-repeat 50% 0;
   }
   .secondCopy {
     padding-top: 244px;
@@ -101,7 +100,7 @@ const SecBannerStyled = styled.div`
     }
     .secondBanner {
       height: 700px;
-      background: url('/static/index/mobile/m_2.png') no-repeat 50%;
+      background: url('/static/index/mobile/m_main_banner_2.png') no-repeat 50%;
     }
     .secondCopy .copy1 {
       font-weight: 200;
@@ -136,7 +135,7 @@ const BrandStyled = styled.div`
   .leftContent .img {
     height: 696px;
     margin-top: 110px;
-    background: url('/static/index/busy-1972122_1920.jpg') no-repeat 25%;
+    background: url('/static/index/main_banner_3.jpg') no-repeat 25%;
   }
   .brandInfo h3 {
     font-size: 35px;
@@ -164,7 +163,7 @@ const BrandStyled = styled.div`
       height: 320px;
       margin-top: 30px;
       margin-left: -42px;
-      background: url('/static/index/mobile/3.jpg') no-repeat 50%;
+      background: url('/static/index/mobile/m_main_banner_3.jpg') no-repeat 50%;
     }
     .rightContent {
       float: none;
@@ -218,6 +217,7 @@ const Index = () => {
         width: isClient ? window.innerWidth : undefined
       };
     }
+
     const [windowSize, setWindowSize] = useState(getSize);
 
     useEffect(() => {
@@ -238,7 +238,6 @@ const Index = () => {
 
   return (
     <Layout focus={focus}>
-      {/* <AppButton></AppButton> */}
       <MainBannerStyled>
         <ScrollAnimation className='mainBanner' animateIn='fadeIn' animateOnce={true}>
           <Container>
@@ -297,29 +296,26 @@ const Index = () => {
               </ScrollAnimation>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1000} animateOnce={true}>
                 <div style={{ marginBottom: '10px' }}>
-                  <a
-                    style={{ marginRight: '10px' }}
-                    href='https://jcon.tistory.com/'
-                    target='_blank'
-                  >
-                    <IndexButton>Blog</IndexButton>
-                  </a>
-                  <a
-                    style={{ marginRight: '10px' }}
-                    href='https://www.notion.so/jch1223/f38268df5c184d8c8da052c7c1a43cc1?v=9a96a51112004440a5e03b400dc67768'
-                    target='_blank'
-                  >
-                    <IndexButton>TIL</IndexButton>
-                  </a>
+                  {config.blog && (
+                    <a style={{ marginRight: '10px' }} href={config.blog} target='_blank'>
+                      <IndexButton>Blog</IndexButton>
+                    </a>
+                  )}
+
+                  {config.til && (
+                    <a style={{ marginRight: '10px' }} href={config.til} target='_blank'>
+                      <IndexButton>TIL</IndexButton>
+                    </a>
+                  )}
                 </div>
+
                 <div>
-                  <a
-                    style={{ marginRight: '10px' }}
-                    href='https://github.com/jch1223'
-                    target='_blank'
-                  >
-                    <IndexButton>Github</IndexButton>
-                  </a>
+                  {config.github && (
+                    <a style={{ marginRight: '10px' }} href={config.github} target='_blank'>
+                      <IndexButton>Github</IndexButton>
+                    </a>
+                  )}
+
                   <Link href='/intro/whoami'>
                     <IndexButton>소개</IndexButton>
                   </Link>

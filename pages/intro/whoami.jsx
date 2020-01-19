@@ -4,9 +4,101 @@ import Container from '../../components/Container';
 import ContentTop from '../../components/ContentTop';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Table } from 'reactstrap';
-import { Container as RsContainer, Row, Col } from 'reactstrap';
 
 import styled from 'styled-components';
+
+const Whoami = props => {
+  const [focus, setFocus] = useState('intro');
+  const [subFocus, setSubFocus] = useState('whoami');
+  return (
+    <Layout focus={focus} subFocus={subFocus}>
+      <ContentTop
+        title='Who am I'
+        url={'/static'}
+        img={'top_banner.jpg'}
+        mImg={'top_banner.jpg'}
+      ></ContentTop>
+
+      <ContentStyled>
+        <div className='top'>
+          <Container>
+            <div className='paddingL'>
+              <p>저는</p> <p>이런 사람 입니다</p>
+            </div>
+            <ScrollAnimation className='copy1' animateIn='fadeIn' animateOnce={true}>
+              <div className='paddingL'>
+                일을 하면서 항상 재미를 느끼지는 않으나 <br />
+                무언가를 생성해 내고 스스로가 발전하고 있다는 성취감에 <br />
+                개발자라는 직업에 매력을 느낍니다
+                <br />
+                <br /> 성장하는 개발자가 되기 위해 블로그와 TIL을 작성하고 있습니다.
+                <br /> 기술을 학습 할 때 해당 기술의 docs를 중점으로 학습합니다.
+                <br />
+                에러 핸들링은 stackover flow와 해당 기술의 github issue페이지를 참고합니다.
+              </div>
+            </ScrollAnimation>
+          </Container>
+        </div>
+
+        <div className='line'></div>
+
+        <div className='bottom'>
+          <Container>
+            <h1 className='paddingL20'>개발 경력</h1>
+            <Table borderless>
+              <tbody>
+                <tr>
+                  <th className='year'>
+                    <p>19.06 - 19.12</p>
+                  </th>
+                  <td className='con'>
+                    <p>본컨설팅 네트웍스</p>
+                    <p style={{ fontSize: '15px', fontWeight: 'normal' }}>프론트엔드 웹 개발자 </p>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+          </Container>
+        </div>
+
+        <div className='line'></div>
+
+        <div className='bottom'>
+          <Container>
+            <h1 className='paddingL20'>Education</h1>
+            <Table borderless>
+              <tbody>
+                <tr>
+                  <th className='year'>
+                    <p>18.11 - 18.05</p>
+                  </th>
+                  <td className='con'>
+                    <p>코드스테이츠</p>
+                    <p style={{ fontSize: '15px', fontWeight: 'normal' }}>
+                      Advanced Software Engineering, Immersive Program
+                    </p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th className='year'>
+                    <p>18.05 - 18.10</p>
+                  </th>
+                  <td className='con'>
+                    <p>엠아이티 능력개발원</p>
+                    <p style={{ fontSize: '15px', fontWeight: 'normal' }}>
+                      JAVA 국비지원 과정 수료
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+          </Container>
+        </div>
+      </ContentStyled>
+    </Layout>
+  );
+};
 
 const ContentStyled = styled.div`
   .top {
@@ -98,98 +190,5 @@ const ContentStyled = styled.div`
     }
   }
 `;
-
-const Whoami = props => {
-  const [focus, setFocus] = useState('intro');
-  const [subFocus, setSubFocus] = useState('whoami');
-  return (
-    <Layout focus={focus} subFocus={subFocus}>
-      <ContentTop
-        title='Who am I'
-        url={'/static/whoami'}
-        img={'code-2620118_1920.jpg'}
-        mImg={'code-2620118_1920.jpg'}
-      ></ContentTop>
-
-      <ContentStyled>
-        <div className='top'>
-          <Container>
-            <div className='paddingL'>
-              <p>저는</p> <p>이런 사람 입니다</p>
-            </div>
-            <ScrollAnimation className='copy1' animateIn='fadeIn' animateOnce={true}>
-              <div className='paddingL'>
-                일을 하면서 항상 재미를 느끼지는 않으나 <br />
-                무언가를 생성해 내고 스스로가 발전하고 있다는 성취감에 <br />
-                개발자라는 직업에 매력을 느낍니다
-                <br />
-                <br /> 성장하는 개발자가 되기 위해 블로그와 TIL을 작성하고 있습니다.
-                <br /> 기술을 학습 할 때 해당 기술의 docs를 중점으로 학습합니다.
-                <br />
-                에러 핸들링은 stackover flow와 해당 기술의 github issue페이지를 참고합니다.
-              </div>
-            </ScrollAnimation>
-          </Container>
-        </div>
-
-        <div className='line'></div>
-
-        <div className='bottom'>
-          <Container>
-            <h1 className='paddingL20'>개발 경력</h1>
-            <Table borderless>
-              <tbody>
-                <tr>
-                  <th className='year'>
-                    <p>19.06 - 19.12</p>
-                  </th>
-                  <td className='con'>
-                    <p>본컨설팅 네트웍스</p>
-                    <p style={{ fontSize: '15px', fontWeight: 'normal' }}>프론트엔드 웹 개발자 </p>
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
-          </Container>
-        </div>
-
-        <div className='line'></div>
-
-        <div className='bottom'>
-          <Container>
-            <h1 className='paddingL20'>Education</h1>
-            <Table borderless>
-              <tbody>
-                <tr>
-                  <th className='year'>
-                    <p>18.11 - 18.05</p>
-                  </th>
-                  <td className='con'>
-                    <p>코드스테이츠</p>
-                    <p style={{ fontSize: '15px', fontWeight: 'normal' }}>
-                      Advanced Software Engineering, Immersive Program
-                    </p>
-                  </td>
-                </tr>
-
-                <tr>
-                  <th className='year'>
-                    <p>18.05 - 18.10</p>
-                  </th>
-                  <td className='con'>
-                    <p>엠아이티 능력개발원</p>
-                    <p style={{ fontSize: '15px', fontWeight: 'normal' }}>
-                      JAVA 국비지원 과정 수료
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
-          </Container>
-        </div>
-      </ContentStyled>
-    </Layout>
-  );
-};
 
 export default Whoami;

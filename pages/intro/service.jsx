@@ -47,10 +47,10 @@ const Service = props => {
   return (
     <Layout focus={focus} subFocus={subFocus}>
       <ContentTop
-        title='Service'
-        url={'/static/service'}
-        img={'2_top_banner.jpg'}
-        mImg={'m_2_top_banner.jpg'}
+        title='Who am I'
+        url={'/static'}
+        img={'top_banner.jpg'}
+        mImg={'top_banner.jpg'}
       ></ContentTop>
       <Container>
         <TabTop></TabTop>

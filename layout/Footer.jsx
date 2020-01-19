@@ -133,7 +133,7 @@ const Footer = () => {
           </div>
           <div className='contentLeft'>
             <div className='chabotLogo'>
-              <img src='/static/logo/jch_LOGO.png' alt='' />
+              <img src='/static/logo/logo.png' alt='' />
             </div>
             <div className='copyright'>&copy;JangChulHee Co.,Ltd.. All Right Reserved.</div>
             <div className='phone'>
