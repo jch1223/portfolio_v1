@@ -61,7 +61,7 @@ const Whoami = props => {
           <Container>
             <h1 className='paddingL20'>SKILL</h1>
 
-            <div className='skill_box'>
+            <div className='skill_box paddingL'>
               <div className='title'> FRONT-END</div>
               <div>
                 <Icon style={{ margin: '10px' }} width='40' icon={html5} />
@@ -72,7 +72,7 @@ const Whoami = props => {
               </div>
             </div>
 
-            <div className='skill_box'>
+            <div className='skill_box paddingL'>
               <div className='title'> BACK-END</div>
               <div>
                 <Icon style={{ margin: '10px' }} width='40' icon={nodejsIcon} />
@@ -82,7 +82,7 @@ const Whoami = props => {
               </div>
             </div>
 
-            <div className='skill_box'>
+            <div className='skill_box paddingL'>
               <div className='title'> DEV TOOLS</div>
               <div>
                 <Icon style={{ margin: '10px' }} width='40' icon={gitIcon} />
@@ -107,7 +107,7 @@ const Whoami = props => {
                   </th>
                   <td className='con'>
                     <p>본컨설팅 네트웍스</p>
-                    <p style={{ fontSize: '15px', fontWeight: 'normal' }}>프론트엔드 웹 개발자 </p>
+                    <p style={{ fontSize: '13px', fontWeight: 'normal' }}>프론트엔드 웹 개발자 </p>
                   </td>
                 </tr>
               </tbody>
@@ -128,7 +128,7 @@ const Whoami = props => {
                   </th>
                   <td className='con'>
                     <p>코드스테이츠</p>
-                    <p style={{ fontSize: '15px', fontWeight: 'normal' }}>
+                    <p style={{ fontSize: '13px', fontWeight: 'normal' }}>
                       Advanced Software Engineering, Immersive Program
                     </p>
                   </td>
@@ -140,7 +140,7 @@ const Whoami = props => {
                   </th>
                   <td className='con'>
                     <p>엠아이티 능력개발원</p>
-                    <p style={{ fontSize: '15px', fontWeight: 'normal' }}>
+                    <p style={{ fontSize: '13px', fontWeight: 'normal' }}>
                       JAVA 국비지원 과정 수료
                     </p>
                   </td>
@@ -233,9 +233,6 @@ const ContentStyled = styled.div`
       .lineMargin {
         margin-bottom: 23px;
       }
-      .year {
-        width: 35px;
-      }
       h1 {
         font-size: 30px;
         margin-bottom: 24px;
@@ -248,21 +245,6 @@ const ContentStyled = styled.div`
         padding: 0;
         font-size: 13px;
       }
-    }
-  }
-`;
-
-const SkillTitle = styled.div`
-  padding-left: 20px;
-  h2 {
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  @media (max-width: 768px) {
-    padding-left: 20px;
-    h2 {
-      font-size: 20px;
     }
   }
 `;

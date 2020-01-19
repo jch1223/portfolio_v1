@@ -24,7 +24,7 @@ export default class Example extends React.Component {
 
   render() {
     return (
-      <TabTopStyled>
+      <div>
         <NavStyled tabs>
           <NavItemStyled>
             <NavLink
@@ -50,7 +50,7 @@ export default class Example extends React.Component {
         </NavStyled>
 
         <TabContent activeTab={this.state.activeTab}>
-          <TabPaneStyled tabId='1'>
+          <TabPane tabId='1'>
             <TabTopStyled>
               <Row>
                 <Col sm='12'>
@@ -90,15 +90,18 @@ export default class Example extends React.Component {
                 </Col>
               </Row>
             </TabTopStyled>
-          </TabPaneStyled>
+          </TabPane>
 
-          <TabPaneStyled tabId='2'>
+          <TabPane tabId='2'>
             <TabTopStyled>
               <Row>
                 <Col sm='12'>
                   <div className='leftContent'>
                     <div className='project_title'>
-                      <div>더 많은 프로젝트는 이력서를 참조해 주세요</div>
+                      <div>
+                        더 많은 프로젝트는 <br />
+                        이력서를 참조해 주세요
+                      </div>
                     </div>
 
                     <a
@@ -117,17 +120,16 @@ export default class Example extends React.Component {
                 </Col>
               </Row>
             </TabTopStyled>
-          </TabPaneStyled>
+          </TabPane>
         </TabContent>
-      </TabTopStyled>
+      </div>
     );
   }
 }
 
-const TabPaneStyled = styled(TabPane)``;
-
 const TabTopStyled = styled.div`
   overflow: hidden;
+  margin-bottom: 39px;
 
   .leftContent {
     display: inline-block;
@@ -153,9 +155,7 @@ const TabTopStyled = styled.div`
     width: 49%;
   }
   .rightContent .img {
-    height: 680px;
     margin-top: 50px;
-    text-align: right;
     img {
       width: 350px;
       display: block;
@@ -164,27 +164,13 @@ const TabTopStyled = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin-bottom: 39px;
-
     .leftContent {
-      padding-left: 20px;
-      padding-top: 50px;
+      padding-top: 20px;
       width: 100%;
-    }
-    .project_title {
-      margin-left: 0;
-      font-size: 39px;
     }
 
     .rightContent {
       float: none;
-      width: 100%;
-    }
-    .rightContent .img {
-      margin: 0;
-    }
-    .rightContent .img img {
-      width: 100%;
     }
   }
 `;
@@ -195,53 +181,43 @@ const NavStyled = styled(Nav)`
   border: 0;
   border-bottom: 3px solid #ededed;
 
-  li {
-    border-bottom: 3px solid #ededed;
-  }
-  li:hover {
-    cursor: pointer;
-  }
   @media (max-width: 768px) {
     margin-top: 20px;
-    li {
-      width: 33.3333%;
-      font-size: 18px;
-      border-bottom: 1px solid #ededed;
-    }
   }
 `;
 
 const NavItemStyled = styled(NavItem)`
   width: 16.6666%;
   text-align: center;
-  .nav-tabs .nav-item {
-    margin-bottom: -3px;
-  }
-  a {
-    font-size: 20px;
-    padding: 19px 0;
-    margin-bottom: -3px !important;
-  }
-  a:hover {
-    border: 0;
+  margin-bottom: -3px !important;
+
+  :hover {
+    cursor: pointer;
   }
   .active {
     border: 0;
     border-bottom: 3px solid #29adb3 !important;
   }
+
+  a {
+    font-size: 20px;
+    padding: 19px 0;
+  }
+  a:hover {
+    border: 0;
+  }
+
   @media (max-width: 768px) {
-    margin-bottom: 0 !important;
+    width: 50%;
+    font-size: 18px;
+
     a {
       padding: 5px;
-    }
-    .active {
-      border-bottom: 1px solid #29adb3 !important;
     }
   }
 `;
 
 const ButtonStyled = styled(Button)`
-  font-weight: bold;
   background: #29adb3;
   color: #fff;
   border: 0;

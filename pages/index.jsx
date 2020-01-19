@@ -131,7 +131,7 @@ const Index = () => {
         </ScrollAnimation>
       </SecBannerStyled>
 
-      <BrandStyled>
+      <ThrBannerStyled>
         <Container>
           <div className='leftContent'>
             <div className='img'></div>
@@ -155,7 +155,7 @@ const Index = () => {
             </div>
           </div>
         </Container>
-      </BrandStyled>
+      </ThrBannerStyled>
 
       <Container>
         <SkillTitle className='skill_title'>
@@ -211,10 +211,9 @@ const MainBannerStyled = styled.div`
     .mainBanner {
       width: 100%;
       margin-top: 180px;
-      margin-bottom: 85px;
       height: 260px;
       background-color: #e2e2e2;
-      background: url('/static/index/mobile/m_main_banner_1.jpg') 50% 0;
+      background: url('/static/index/mobile/main_banner_1.jpg') 50% 0;
     }
     .mainCopy {
       float: left;
@@ -249,32 +248,30 @@ const SecBannerStyled = styled.div`
   }
 
   @media (max-width: 768px) {
-    .secondCopy {
-      padding-top: 400px;
-    }
     .secondBanner {
-      height: 700px;
-      background: url('/static/index/mobile/m_main_banner_2.png') no-repeat 50%;
+      height: 516px;
+      background: url('/static/index/mobile/main_banner_2.jpg') no-repeat 50% 0;
+    }
+    .secondCopy {
+      padding-top: 130px;
     }
     .secondCopy .copy1 {
       font-weight: 200;
-      margin-bottom: 0px;
-      font-size: 22px;
+      font-size: 18px;
     }
     .secondCopy .copy2 {
-      font-size: 47px;
-      font-weight: bold;
-      margin-bottom: 20px;
+      font-size: 40px;
+      margin-bottom: 10px;
     }
     .secondCopy .copy3 {
-      font-size: 17px;
+      font-size: 15px;
       width: 280px;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
     }
   }
 `;
 
-const BrandStyled = styled.div`
+const ThrBannerStyled = styled.div`
   overflow: hidden;
   margin-bottom: 50px;
   .leftContent {
@@ -315,9 +312,8 @@ const BrandStyled = styled.div`
     }
     .leftContent .img {
       height: 320px;
-      margin-top: 30px;
-      margin-left: -42px;
-      background: url('/static/index/mobile/m_main_banner_3.jpg') no-repeat 50%;
+      margin-top: 0;
+      background: url('/static/index/mobile/main_banner_3.jpg') no-repeat 20%;
     }
     .rightContent {
       float: none;
