@@ -30,6 +30,8 @@ const IndexButton = styled(Button)`
 `;
 
 const MainBannerStyled = styled.div`
+  text-align: right;
+
   .mainBanner {
     width: 100%;
     height: 600px;
@@ -45,9 +47,6 @@ const MainBannerStyled = styled.div`
     color: white;
     font-weight: bold;
     /* text-shadow: 2px 2px 6px black; */
-  }
-  #copy2 {
-    text-align: right;
   }
 
   .slide {
@@ -75,7 +74,7 @@ const MainBannerStyled = styled.div`
 const SecBannerStyled = styled.div`
   .secondBanner {
     height: 973px;
-    background: url('/static/index/web_mainbanner2.jpg') no-repeat 50% 0;
+    background: url('/static/index/second_banner.jpg') no-repeat 50% 0;
   }
   .secondCopy {
     padding-top: 244px;
@@ -127,18 +126,17 @@ const BrandStyled = styled.div`
   margin-bottom: 160px;
   .leftContent {
     display: inline-block;
-
     width: 49%;
   }
   .rightContent {
     float: right;
-    padding-top: 245px;
+    padding-top: 230px;
     width: 40%;
   }
   .leftContent .img {
     height: 696px;
     margin-top: 110px;
-    background: url('/static/index/web_mobileapp.png') no-repeat 50%;
+    background: url('/static/index/busy-1972122_1920.jpg') no-repeat 25%;
   }
   .brandInfo h3 {
     font-size: 35px;
@@ -148,7 +146,7 @@ const BrandStyled = styled.div`
     font-size: 77px;
     font-weight: bold;
     margin-top: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
   .desc {
     max-width: 369px;
@@ -246,7 +244,7 @@ const Index = () => {
           <Container>
             <div className='mainCopy'>
               <ScrollAnimation className='copy1' animateIn='fadeInUp' animateOnce={true}>
-                <div id='copy1'> FRONTEND DEVELOPER</div>
+                <div id='copy1'> FRONT-END</div>
               </ScrollAnimation>
               <ScrollAnimation
                 className='copy2'
@@ -254,7 +252,11 @@ const Index = () => {
                 delay={500}
                 animateOnce={true}
               >
-                <div id='copy2'>JANG CHUL HEE</div>
+                <div id='copy2'>
+                  {' '}
+                  DEVELOPER <br />
+                  JANG CHUL HEE
+                </div>
               </ScrollAnimation>
             </div>
           </Container>
@@ -272,7 +274,7 @@ const Index = () => {
             <div className='secondCopy'>
               <ScrollAnimation className='copy1' offset={0} animateIn='fadeInUp' animateOnce={true}>
                 <div>
-                  FRONTEND DEVELOPER <br></br> JANG CHUL HEE
+                  책임감, 성실, 소통을 중요시 생각하는 <br></br>
                 </div>
               </ScrollAnimation>
               <ScrollAnimation
@@ -282,7 +284,7 @@ const Index = () => {
                 delay={400}
                 animateOnce={true}
               >
-                <div>CHABOT</div>
+                <div>JANG CHUL HEE</div>
               </ScrollAnimation>
               <ScrollAnimation
                 className='copy3'
@@ -291,16 +293,37 @@ const Index = () => {
                 delay={800}
                 animateOnce={true}
               >
-                <div>
-                  차봇은 자동차 관리, 금융, 보험 등 <br />
-                  모든 자동차 서비스를 하나로 묶는
-                  <br /> 자동차 컨시어지 플랫폼입니다
-                </div>
+                <div>성장하는 개발자가 되기 위해 블로그와 TIL을 작성하고 있습니다.</div>
               </ScrollAnimation>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1000} animateOnce={true}>
-                <Link href='/chabot/service'>
-                  <IndexButton>차봇 소개</IndexButton>
-                </Link>
+                <div style={{ marginBottom: '10px' }}>
+                  <a
+                    style={{ marginRight: '10px' }}
+                    href='https://jcon.tistory.com/'
+                    target='_blank'
+                  >
+                    <IndexButton>Blog</IndexButton>
+                  </a>
+                  <a
+                    style={{ marginRight: '10px' }}
+                    href='https://www.notion.so/jch1223/f38268df5c184d8c8da052c7c1a43cc1?v=9a96a51112004440a5e03b400dc67768'
+                    target='_blank'
+                  >
+                    <IndexButton>TIL</IndexButton>
+                  </a>
+                </div>
+                <div>
+                  <a
+                    style={{ marginRight: '10px' }}
+                    href='https://github.com/jch1223'
+                    target='_blank'
+                  >
+                    <IndexButton>Github</IndexButton>
+                  </a>
+                  <Link href='/intro/whoami'>
+                    <IndexButton>소개</IndexButton>
+                  </Link>
+                </div>
               </ScrollAnimation>
             </div>
           </Container>
@@ -314,22 +337,19 @@ const Index = () => {
           </div>
           <div className='rightContent'>
             <div className='brandInfo'>
-              <ScrollAnimation offset={0} animateIn='fadeInUp' animateOnce={true}>
-                <h3>자동차로 하나되는 세상</h3>
-                <h3>모빌리티 메가 트렌드의 중심</h3>
-              </ScrollAnimation>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={400} animateOnce={true}>
-                <h1>CHABOT</h1>
+                <h1>PROJECT</h1>
               </ScrollAnimation>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={800} animateOnce={true}>
                 <div className='desc'>
-                  차봇은 자동차와 함께 만들어가는 일상을 공유하여 모든 사람과 연결해주는 자동차
-                  글로벌 커뮤니티의 시작입니다{' '}
+                  <p>디자이너와 실무 협업한 경험이 있으며,</p>
+                  <p>기술을 학습 할 때 해당 기술의 docs를 중점으로 학습합니다.</p>
+                  <p>에러 핸들링은 stackover flow와 해당 기술의 github issue페이지를 참고합니다.</p>
                 </div>
               </ScrollAnimation>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1200} animateOnce={true}>
-                <Link href='/chabot/brand'>
-                  <IndexButton> 브랜드 소개</IndexButton>
+                <Link href='/intro/brand'>
+                  <IndexButton> 프로젝트</IndexButton>
                 </Link>
               </ScrollAnimation>
             </div>

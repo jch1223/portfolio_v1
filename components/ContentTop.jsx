@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const ContentTop = props => {
   const BannerStyled = styled.div`
     height: 172px;
-    background: url('${props.url}/${props.img}') no-repeat 50% 0;
+    background: url('${props.url}/${props.img}') no-repeat 50% 100%;
     text-align: left;
     .title {
       line-height: 172px;
@@ -22,7 +22,7 @@ const ContentTop = props => {
     @media(max-width:768px){
       height: 78px;
       padding-left: 10px;
-      background: url('${props.url}/${props.mImg}') no-repeat 50% 0;
+      background: url('${props.url}/${props.mImg}') no-repeat 50% 100%;
       .title{
         line-height: 78px;
         font-size: 35px;

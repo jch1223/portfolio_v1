@@ -161,11 +161,7 @@ const News = props => {
   };
 
   return (
-    <Layout
-      title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT press'}
-      focus={focus}
-      subFocus={subFocus}
-    >
+    <Layout focus={focus} subFocus={subFocus}>
       <ContentTop
         title={'Press'}
         url={'/static/press'}

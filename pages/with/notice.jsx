@@ -36,11 +36,7 @@ const Notice = props => {
   const [subFocus, setSubFocus] = useState('notice');
   console.log(props.limit);
   return (
-    <Layout
-      title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT notice'}
-      focus={focus}
-      subFocus={subFocus}
-    >
+    <Layout focus={focus} subFocus={subFocus}>
       <ContentTop
         title={'Notice'}
         url={'/static/notice'}

@@ -107,14 +107,25 @@ const Header = ({ focus, subFocus }) => {
         </Link>
 
         <div className='menu' onClick={menuHandler}>
-          <Link href='/chabot/service' prefetch={false}>
-            <a id='menuTitle' className={focus === 'chabot' ? 'focus' : 'chabot'}>
-              차봇하다
+          <Link href='/intro/whoami' prefetch={false}>
+            <a id='menuTitle' className={focus === 'intro' ? 'focus' : 'intro'}>
+              INTRO
             </a>
           </Link>
           <ul>
             <li>
-              <Link href='/chabot/service' prefetch={false}>
+              <Link href='/intro/whoami' prefetch={false}>
+                <a
+                  onClick={subMenuHandler}
+                  className={subFocus === 'whoami' ? 'subFocus' : 'whoami'}
+                >
+                  소개
+                </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link href='/intro/service' prefetch={false}>
                 <a
                   onClick={subMenuHandler}
                   className={subFocus === 'service' ? 'subFocus' : 'service'}
@@ -123,56 +134,14 @@ const Header = ({ focus, subFocus }) => {
                 </a>
               </Link>
             </li>
+
             <li>
-              <Link href='/chabot/brand' prefetch={false}>
-                <a onClick={subMenuHandler} className={subFocus === 'brand' ? 'subFocus' : 'brand'}>
-                  브랜드
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/chabot/people' prefetch={false}>
+              <Link href='/intro/people' prefetch={false}>
                 <a
                   onClick={subMenuHandler}
                   className={subFocus === 'people' ? 'subFocus' : 'people'}
                 >
                   사람들
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className='menu' onClick={menuHandler}>
-          <Link href='/with/recruit' prefetch={false}>
-            <a id='menuTitle' className={focus === 'with' ? 'focus' : 'with'}>
-              함께하다
-            </a>
-          </Link>
-          <ul>
-            <li>
-              <Link href='/with/recruit' prefetch={false}>
-                <a
-                  onClick={subMenuHandler}
-                  className={subFocus === 'recruit' ? 'subFocus' : 'recruit'}
-                >
-                  채용
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/with/news' prefetch={false}>
-                <a onClick={subMenuHandler} className={subFocus === 'news' ? 'subFocus' : 'news'}>
-                  기사
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href='/with/notice' prefetch={false}>
-                <a
-                  onClick={subMenuHandler}
-                  className={subFocus === 'notice' ? 'subFocus' : 'notice'}
-                >
-                  공지사항
                 </a>
               </Link>
             </li>

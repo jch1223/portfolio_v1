@@ -195,7 +195,7 @@ const CardBox = props => {
 };
 
 const People = props => {
-  const [focus, setFocus] = useState('chabot');
+  const [focus, setFocus] = useState('intro');
   const [subFocus, setSubFocus] = useState('people');
 
   const goToRecruit = () => {
@@ -203,11 +203,7 @@ const People = props => {
   };
 
   return (
-    <Layout
-      title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT people'}
-      focus={focus}
-      subFocus={subFocus}
-    >
+    <Layout focus={focus} subFocus={subFocus}>
       <ContentTop
         title='People'
         url={'/static/people'}

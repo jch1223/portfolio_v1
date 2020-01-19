@@ -107,7 +107,7 @@ export default class Example extends React.Component {
                     </Link>
                   </li>
                   <li>
-                    <Link href='/chabot/brand'>
+                    <Link href='/chabot/whoami'>
                       <a className='subMenu'>브랜드</a>
                     </Link>
                   </li>

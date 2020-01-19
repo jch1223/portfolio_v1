@@ -91,11 +91,7 @@ const Recruit = props => {
   };
 
   return (
-    <Layout
-      title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT recruit'}
-      focus={focus}
-      subFocus={subFocus}
-    >
+    <Layout focus={focus} subFocus={subFocus}>
       <ContentTop
         title={'Recruit'}
         url={'/static/recruit'}

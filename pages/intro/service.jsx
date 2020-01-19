@@ -29,7 +29,7 @@ const MidContentStyeld = styled.div`
 `;
 
 const Service = props => {
-  const [focus, setFocus] = useState('chabot');
+  const [focus, setFocus] = useState('intro');
   const [subFocus, setSubFocus] = useState('service');
   const [layer, setLayer] = useState(false);
   const [serviceName, setServiceName] = useState('');
@@ -45,11 +45,7 @@ const Service = props => {
   };
 
   return (
-    <Layout
-      title={'자동차로 하나되는 세상, 차봇 ㅣ CHABOT service'}
-      focus={focus}
-      subFocus={subFocus}
-    >
+    <Layout focus={focus} subFocus={subFocus}>
       <ContentTop
         title='Service'
         url={'/static/service'}

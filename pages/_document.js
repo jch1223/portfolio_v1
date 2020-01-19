@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
           <meta name='description' content='프론트엔드 개발자 장철희 ㅣ JangChulHee' />
           <meta property='og:description' content='프론트엔드 개발자 장철희 ㅣ JangChulHee' />
           <meta name='keywords' content='프론트엔드, 개발자, 장철희' />
-          <link rel='icon' href='/static/logo/favicon.PNG' type='image/x-icon' />
+          <link rel='icon' href='/static/logo/favicon.png' type='image/x-icon' />
           <link
             rel='stylesheet'
             href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'

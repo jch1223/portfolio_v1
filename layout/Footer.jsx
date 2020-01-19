@@ -115,13 +115,15 @@ const Footer = () => {
               <a
                 href='https://post.naver.com/my.nhn?memberNo=43364200'
                 target='_blank'
-                className='naver'>
+                className='naver'
+              >
                 <img src='/static/footer_post.png' alt='네이버' />
               </a>
               <a
                 href='https://www.instagram.com/chabot_official/'
                 target='_blank'
-                className='insta'>
+                className='insta'
+              >
                 <img src='/static/footer_instar.png' alt='인스타' />
               </a>
               <a href='https://pf.kakao.com/_cGHVj' target='_blank' className='kakao'>
@@ -131,15 +133,15 @@ const Footer = () => {
           </div>
           <div className='contentLeft'>
             <div className='chabotLogo'>
-              <img src='/static/footer_logo.png' alt='' />
+              <img src='/static/logo/jch_LOGO.png' alt='' />
             </div>
-            <div className='copyright'>&copy;BCN Co.,Ltd.. All Right Reserved.</div>
+            <div className='copyright'>&copy;JangChulHee Co.,Ltd.. All Right Reserved.</div>
             <div className='phone'>
               <div>
-                <span>고객센터</span> 1800-8765 <span>팩스</span> 02-3394-7773
+                <span>Phone</span> 010-6221-7344
               </div>
               <div>
-                <span>사업자번호</span> 575-87-00451 <span>통신판매업신고</span> 제2017-동대문-215호
+                <span>E-mail</span> ico1828@gmail.com
               </div>
             </div>
           </div>
