@@ -125,17 +125,6 @@ const Header = ({ focus, subFocus }) => {
             </li>
 
             <li>
-              <Link href='/intro/people' prefetch={false}>
-                <a
-                  onClick={subMenuHandler}
-                  className={subFocus === 'people' ? 'subFocus' : 'people'}
-                >
-                  스킬
-                </a>
-              </Link>
-            </li>
-
-            <li>
               <Link href='/intro/service' prefetch={false}>
                 <a
                   onClick={subMenuHandler}
