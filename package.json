@@ -34,5 +34,12 @@
     "reactstrap": "^8.0.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "@iconify/icons-ant-design": "^1.0.6",
+    "@iconify/icons-cib": "^1.0.0",
+    "@iconify/icons-dashicons": "^1.0.4",
+    "@iconify/icons-logos": "^1.0.9",
+    "@iconify/react": "^1.1.1"
   }
 }

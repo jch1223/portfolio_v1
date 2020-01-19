@@ -9,7 +9,7 @@ import Container from '../components/Container';
 
 import config from '../config/config';
 
-const ReviewSlide = dynamic(() => import('../components/ReviewSlide'), { ssr: false });
+const SkillSlide = dynamic(() => import('../components/SkillSlide'), { ssr: false });
 
 const Index = () => {
   const [focus, setFocus] = useState('index');
@@ -58,7 +58,6 @@ const Index = () => {
                 animateOnce={true}
               >
                 <div id='copy2'>
-                  {' '}
                   DEVELOPER <br />
                   JANG CHUL HEE
                 </div>
@@ -159,11 +158,11 @@ const Index = () => {
       </BrandStyled>
 
       <Container>
-        <ReviewTitle className='reviewTitle'>
-          <h2>사용자 후기</h2>
-        </ReviewTitle>
+        <SkillTitle className='skill_title'>
+          <h2>SKILL</h2>
+        </SkillTitle>
       </Container>
-      <ReviewSlide></ReviewSlide>
+      <SkillSlide></SkillSlide>
     </Layout>
   );
 };
@@ -277,7 +276,7 @@ const SecBannerStyled = styled.div`
 
 const BrandStyled = styled.div`
   overflow: hidden;
-  margin-bottom: 160px;
+  margin-bottom: 50px;
   .leftContent {
     display: inline-block;
     width: 49%;
@@ -345,8 +344,8 @@ const BrandStyled = styled.div`
   }
 `;
 
-const ReviewTitle = styled.div`
-  padding-left: 175px;
+const SkillTitle = styled.div`
+  padding-left: 20px;
   h2 {
     font-size: 28px;
     font-weight: bold;

@@ -1,7 +1,51 @@
 import styled from 'styled-components';
 import Container from '../components/Container';
+import { Icon, InlineIcon } from '@iconify/react';
+import welcomeWriteBlog from '@iconify/icons-dashicons/welcome-write-blog';
+import githubFilled from '@iconify/icons-ant-design/github-filled';
 
 import config from '../config/config';
+
+const Footer = () => {
+  return (
+    <FooterStyled>
+      <Container>
+        <div className='footerContent'>
+          <div className='contentRight'>
+            <div className='linkWrap'>
+              {config.blog && (
+                <a href={config.blog} target='_blank' className='blog'>
+                  <Icon width='50' icon={welcomeWriteBlog} />
+                </a>
+              )}
+
+              {config.github && (
+                <a href={config.github} target='_blank' className='github'>
+                  <Icon width='50' icon={githubFilled} />
+                </a>
+              )}
+            </div>
+          </div>
+
+          <div className='contentLeft'>
+            <div className='footer_logo'>
+              <img src='/static/logo/logo.png' alt='' />
+            </div>
+            <div className='copyright'>&copy;JangChulHee Co.,Ltd.. All Right Reserved.</div>
+            <div className='phone'>
+              <div>
+                <span>Phone</span> {config.phone}
+              </div>
+              <div>
+                <span>E-mail</span> {config.email}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </FooterStyled>
+  );
+};
 
 const FooterStyled = styled.div`
   height: 290px;
@@ -13,11 +57,11 @@ const FooterStyled = styled.div`
     padding-top: 90px;
   }
 
-  .chabotLogo {
+  .footer_logo {
     width: 156px;
     margin-bottom: 15px;
   }
-  .chabotLogo img {
+  .footer_logo img {
     display: block;
     width: 100%;
   }
@@ -47,9 +91,6 @@ const FooterStyled = styled.div`
     .linkWrap a {
       margin-left: 16px;
     }
-    .linkWrap img {
-      width: 55px;
-    }
   }
 
   @media (max-width: 768px) {
@@ -70,16 +111,13 @@ const FooterStyled = styled.div`
         margin-left: 0;
         margin-right: 10px;
       }
-      .linkWrap img {
-        width: 30px;
-      }
     }
     .contentLeft {
       float: none;
-      .chabotLogo {
+      .footer_logo {
         margin-bottom: 18px;
       }
-      .chabotLogo img {
+      .footer_logo img {
         width: 120px;
       }
       .copyright {
@@ -92,51 +130,5 @@ const FooterStyled = styled.div`
     }
   }
 `;
-
-const Footer = () => {
-  return (
-    <FooterStyled>
-      <Container>
-        <div className='footerContent'>
-          <div className='contentRight'>
-            <div className='linkWrap'>
-              <a
-                href='https://post.naver.com/my.nhn?memberNo=43364200'
-                target='_blank'
-                className='naver'
-              >
-                <img src='/static/footer_post.png' alt='네이버' />
-              </a>
-              <a
-                href='https://www.instagram.com/chabot_official/'
-                target='_blank'
-                className='insta'
-              >
-                <img src='/static/footer_instar.png' alt='인스타' />
-              </a>
-              <a href='https://pf.kakao.com/_cGHVj' target='_blank' className='kakao'>
-                <img src='/static/footer_kakao.png' alt='카카오' />
-              </a>
-            </div>
-          </div>
-          <div className='contentLeft'>
-            <div className='chabotLogo'>
-              <img src='/static/logo/logo.png' alt='' />
-            </div>
-            <div className='copyright'>&copy;JangChulHee Co.,Ltd.. All Right Reserved.</div>
-            <div className='phone'>
-              <div>
-                <span>Phone</span> 010-6221-7344
-              </div>
-              <div>
-                <span>E-mail</span> ico1828@gmail.com
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </FooterStyled>
-  );
-};
 
 export default Footer;
