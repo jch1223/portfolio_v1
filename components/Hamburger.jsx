@@ -4,6 +4,66 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Container from './Container';
 
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.state = {
+      collapsed: true
+    };
+  }
+
+  toggleNavbar() {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
+  render() {
+    return (
+      <MenuDiv>
+        <Navbar color='faded' light>
+          {this.state.collapsed ? (
+            <Link href='/'>
+              <a className='logoImg'>
+                <img src='/static/logo/logo.png' alt='로고이미지' />
+              </a>
+            </Link>
+          ) : (
+            <a className='logoImg'>
+              <img src='/static/logo/logo.png' style={{ visibility: 'hidden' }} alt='로고이미지' />
+            </a>
+          )}
+
+          <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
+
+          <Collapse isOpen={!this.state.collapsed} navbar style={{ height: '100vh' }}>
+            <Container>
+              <div className='menu'>
+                <Link href='/intro/whoami'>
+                  <a className='menuTitle'>INTRO</a>
+                </Link>
+                <ul>
+                  <li>
+                    <Link href='/intro/whoami'>
+                      <a className='subMenu'>소개</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/intro/project'>
+                      <a className='subMenu'>프로젝트</a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </Container>
+          </Collapse>
+        </Navbar>
+      </MenuDiv>
+    );
+  }
+}
+
 const MenuDiv = styled.div`
   overflow: hidden;
   text-align: right;
@@ -62,88 +122,3 @@ const MenuDiv = styled.div`
     text-decoration: none;
   }
 `;
-
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
-  }
-
-  toggleNavbar() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-  render() {
-    return (
-      <MenuDiv>
-        <Navbar color='faded' light>
-          {this.state.collapsed ? (
-            <Link href='/'>
-              <a className='logoImg'>
-                <img src='/static/top_logo.png' alt='로고이미지' />
-              </a>
-            </Link>
-          ) : (
-            <a className='logoImg'>
-              <img src='/static/top_logo.png' style={{ visibility: 'hidden' }} alt='로고이미지' />
-            </a>
-          )}
-          <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
-          <Collapse isOpen={!this.state.collapsed} navbar style={{ height: '100vh' }}>
-            <Container>
-              <div className='menu'>
-                <Link href='/chabot/service'>
-                  <a className='menuTitle'>차봇하다</a>
-                </Link>
-                <ul>
-                  <li>
-                    <Link href='/chabot/service'>
-                      <a className='subMenu'>서비스</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='/chabot/whoami'>
-                      <a className='subMenu'>브랜드</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='/chabot/people'>
-                      <a className='subMenu'>사람들</a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className='menu'>
-                <Link href='/with/recruit'>
-                  <a className='menuTitle'>함께하다</a>
-                </Link>
-                <ul>
-                  <li>
-                    <Link href='/with/recruit'>
-                      <a className='subMenu'>채용</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='/with/news'>
-                      <a className='subMenu'>기사</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='/with/notice'>
-                      <a className='subMenu'>공지사항</a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </Container>
-          </Collapse>
-        </Navbar>
-      </MenuDiv>
-    );
-  }
-}

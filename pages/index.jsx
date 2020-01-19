@@ -148,7 +148,7 @@ const Index = () => {
                 </div>
               </ScrollAnimation>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1200} animateOnce={true}>
-                <Link href='/intro/brand'>
+                <Link href='/intro/project'>
                   <IndexButton> 프로젝트</IndexButton>
                 </Link>
               </ScrollAnimation>

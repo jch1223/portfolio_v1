@@ -125,10 +125,10 @@ const Header = ({ focus, subFocus }) => {
             </li>
 
             <li>
-              <Link href='/intro/service' prefetch={false}>
+              <Link href='/intro/project' prefetch={false}>
                 <a
                   onClick={subMenuHandler}
-                  className={subFocus === 'service' ? 'subFocus' : 'service'}
+                  className={subFocus === 'project' ? 'subFocus' : 'project'}
                 >
                   프로젝트
                 </a>
