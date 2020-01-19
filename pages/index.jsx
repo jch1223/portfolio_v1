@@ -11,6 +11,163 @@ import config from '../config/config';
 
 const ReviewSlide = dynamic(() => import('../components/ReviewSlide'), { ssr: false });
 
+const Index = () => {
+  const [focus, setFocus] = useState('index');
+  const size = useWindowSize();
+
+  function useWindowSize() {
+    const isClient = typeof window === 'object';
+
+    function getSize() {
+      return {
+        width: isClient ? window.innerWidth : undefined
+      };
+    }
+
+    const [windowSize, setWindowSize] = useState(getSize);
+
+    useEffect(() => {
+      if (!isClient) {
+        return false;
+      }
+
+      function handleResize() {
+        setWindowSize(getSize());
+      }
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return windowSize;
+  }
+
+  return (
+    <Layout focus={focus}>
+      <MainBannerStyled>
+        <ScrollAnimation className='mainBanner' animateIn='fadeIn' animateOnce={true}>
+          <Container>
+            <div className='mainCopy'>
+              <ScrollAnimation className='copy1' animateIn='fadeInUp' animateOnce={true}>
+                <div id='copy1'> FRONT-END</div>
+              </ScrollAnimation>
+              <ScrollAnimation
+                className='copy2'
+                animateIn='fadeInUp'
+                delay={500}
+                animateOnce={true}
+              >
+                <div id='copy2'>
+                  {' '}
+                  DEVELOPER <br />
+                  JANG CHUL HEE
+                </div>
+              </ScrollAnimation>
+            </div>
+          </Container>
+        </ScrollAnimation>
+      </MainBannerStyled>
+
+      <SecBannerStyled>
+        <ScrollAnimation
+          className='secondBanner'
+          offset={500}
+          animateIn='fadeIn'
+          animateOnce={true}
+        >
+          <Container>
+            <div className='secondCopy'>
+              <ScrollAnimation className='copy1' offset={0} animateIn='fadeInUp' animateOnce={true}>
+                <div>
+                  책임감, 성실, 소통을 중요시 생각하는 <br></br>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation
+                className='copy2'
+                offset={0}
+                animateIn='fadeInUp'
+                delay={400}
+                animateOnce={true}
+              >
+                <div>JANG CHUL HEE</div>
+              </ScrollAnimation>
+              <ScrollAnimation
+                className='copy3'
+                offset={0}
+                animateIn='fadeInUp'
+                delay={800}
+                animateOnce={true}
+              >
+                <div>성장하는 개발자가 되기 위해 블로그와 TIL을 작성하고 있습니다.</div>
+              </ScrollAnimation>
+              <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1000} animateOnce={true}>
+                <div style={{ marginBottom: '10px' }}>
+                  {config.blog && (
+                    <a style={{ marginRight: '10px' }} href={config.blog} target='_blank'>
+                      <IndexButton>Blog</IndexButton>
+                    </a>
+                  )}
+
+                  {config.til && (
+                    <a style={{ marginRight: '10px' }} href={config.til} target='_blank'>
+                      <IndexButton>TIL</IndexButton>
+                    </a>
+                  )}
+                </div>
+
+                <div>
+                  {config.github && (
+                    <a style={{ marginRight: '10px' }} href={config.github} target='_blank'>
+                      <IndexButton>Github</IndexButton>
+                    </a>
+                  )}
+
+                  <Link href='/intro/whoami'>
+                    <IndexButton>소개</IndexButton>
+                  </Link>
+                </div>
+              </ScrollAnimation>
+            </div>
+          </Container>
+        </ScrollAnimation>
+      </SecBannerStyled>
+
+      <BrandStyled>
+        <Container>
+          <div className='leftContent'>
+            <div className='img'></div>
+          </div>
+          <div className='rightContent'>
+            <div className='brandInfo'>
+              <ScrollAnimation offset={0} animateIn='fadeInUp' delay={400} animateOnce={true}>
+                <h1>PROJECT</h1>
+              </ScrollAnimation>
+              <ScrollAnimation offset={0} animateIn='fadeInUp' delay={800} animateOnce={true}>
+                <div className='desc'>
+                  <p>기술을 학습 할 때 해당 기술의 docs를 중점으로 학습합니다.</p>
+                  <p>에러 핸들링은 stackover flow와 해당 기술의 github issue페이지를 참고합니다.</p>
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1200} animateOnce={true}>
+                <Link href='/intro/brand'>
+                  <IndexButton> 프로젝트</IndexButton>
+                </Link>
+              </ScrollAnimation>
+            </div>
+          </div>
+        </Container>
+      </BrandStyled>
+
+      <Container>
+        <ReviewTitle className='reviewTitle'>
+          <h2>사용자 후기</h2>
+        </ReviewTitle>
+      </Container>
+      <ReviewSlide></ReviewSlide>
+    </Layout>
+  );
+};
+
 const IndexButton = styled(Button)`
   width: 185px;
   height: 48px;
@@ -45,7 +202,6 @@ const MainBannerStyled = styled.div`
   .copy2 {
     color: white;
     font-weight: bold;
-    /* text-shadow: 2px 2px 6px black; */
   }
 
   .slide {
@@ -59,7 +215,6 @@ const MainBannerStyled = styled.div`
       margin-bottom: 85px;
       height: 260px;
       background-color: #e2e2e2;
-      /* no-repeat 제거 -> 이미지 크기가 확정이 안나서 일단 가안으로 확인 하기 위해 */
       background: url('/static/index/mobile/m_main_banner_1.jpg') 50% 0;
     }
     .mainCopy {
@@ -204,163 +359,5 @@ const ReviewTitle = styled.div`
     }
   }
 `;
-
-const Index = () => {
-  const [focus, setFocus] = useState('index');
-  const size = useWindowSize();
-
-  function useWindowSize() {
-    const isClient = typeof window === 'object';
-
-    function getSize() {
-      return {
-        width: isClient ? window.innerWidth : undefined
-      };
-    }
-
-    const [windowSize, setWindowSize] = useState(getSize);
-
-    useEffect(() => {
-      if (!isClient) {
-        return false;
-      }
-
-      function handleResize() {
-        setWindowSize(getSize());
-      }
-
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }, []); // Empty array ensures that effect is only run on mount and unmount
-
-    return windowSize;
-  }
-
-  return (
-    <Layout focus={focus}>
-      <MainBannerStyled>
-        <ScrollAnimation className='mainBanner' animateIn='fadeIn' animateOnce={true}>
-          <Container>
-            <div className='mainCopy'>
-              <ScrollAnimation className='copy1' animateIn='fadeInUp' animateOnce={true}>
-                <div id='copy1'> FRONT-END</div>
-              </ScrollAnimation>
-              <ScrollAnimation
-                className='copy2'
-                animateIn='fadeInUp'
-                delay={500}
-                animateOnce={true}
-              >
-                <div id='copy2'>
-                  {' '}
-                  DEVELOPER <br />
-                  JANG CHUL HEE
-                </div>
-              </ScrollAnimation>
-            </div>
-          </Container>
-        </ScrollAnimation>
-      </MainBannerStyled>
-
-      <SecBannerStyled>
-        <ScrollAnimation
-          className='secondBanner'
-          offset={500}
-          animateIn='fadeIn'
-          animateOnce={true}
-        >
-          <Container>
-            <div className='secondCopy'>
-              <ScrollAnimation className='copy1' offset={0} animateIn='fadeInUp' animateOnce={true}>
-                <div>
-                  책임감, 성실, 소통을 중요시 생각하는 <br></br>
-                </div>
-              </ScrollAnimation>
-              <ScrollAnimation
-                className='copy2'
-                offset={0}
-                animateIn='fadeInUp'
-                delay={400}
-                animateOnce={true}
-              >
-                <div>JANG CHUL HEE</div>
-              </ScrollAnimation>
-              <ScrollAnimation
-                className='copy3'
-                offset={0}
-                animateIn='fadeInUp'
-                delay={800}
-                animateOnce={true}
-              >
-                <div>성장하는 개발자가 되기 위해 블로그와 TIL을 작성하고 있습니다.</div>
-              </ScrollAnimation>
-              <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1000} animateOnce={true}>
-                <div style={{ marginBottom: '10px' }}>
-                  {config.blog && (
-                    <a style={{ marginRight: '10px' }} href={config.blog} target='_blank'>
-                      <IndexButton>Blog</IndexButton>
-                    </a>
-                  )}
-
-                  {config.til && (
-                    <a style={{ marginRight: '10px' }} href={config.til} target='_blank'>
-                      <IndexButton>TIL</IndexButton>
-                    </a>
-                  )}
-                </div>
-
-                <div>
-                  {config.github && (
-                    <a style={{ marginRight: '10px' }} href={config.github} target='_blank'>
-                      <IndexButton>Github</IndexButton>
-                    </a>
-                  )}
-
-                  <Link href='/intro/whoami'>
-                    <IndexButton>소개</IndexButton>
-                  </Link>
-                </div>
-              </ScrollAnimation>
-            </div>
-          </Container>
-        </ScrollAnimation>
-      </SecBannerStyled>
-
-      <BrandStyled>
-        <Container>
-          <div className='leftContent'>
-            <div className='img'></div>
-          </div>
-          <div className='rightContent'>
-            <div className='brandInfo'>
-              <ScrollAnimation offset={0} animateIn='fadeInUp' delay={400} animateOnce={true}>
-                <h1>PROJECT</h1>
-              </ScrollAnimation>
-              <ScrollAnimation offset={0} animateIn='fadeInUp' delay={800} animateOnce={true}>
-                <div className='desc'>
-                  <p>디자이너와 실무 협업한 경험이 있으며,</p>
-                  <p>기술을 학습 할 때 해당 기술의 docs를 중점으로 학습합니다.</p>
-                  <p>에러 핸들링은 stackover flow와 해당 기술의 github issue페이지를 참고합니다.</p>
-                </div>
-              </ScrollAnimation>
-              <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1200} animateOnce={true}>
-                <Link href='/intro/brand'>
-                  <IndexButton> 프로젝트</IndexButton>
-                </Link>
-              </ScrollAnimation>
-            </div>
-          </div>
-        </Container>
-      </BrandStyled>
-
-      <Container>
-        <ReviewTitle className='reviewTitle'>
-          <h2>사용자 후기</h2>
-        </ReviewTitle>
-      </Container>
-      <ReviewSlide></ReviewSlide>
-    </Layout>
-  );
-};
 
 export default Index;

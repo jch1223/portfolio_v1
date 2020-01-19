@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import Container from '../components/Container';
+
+import config from '../config/config';
 
 const FooterStyled = styled.div`
   height: 290px;
@@ -40,9 +41,6 @@ const FooterStyled = styled.div`
     font-size: 15px;
     font-weight: bold;
     text-align: right;
-    .serviceTerms {
-      margin-bottom: 11px;
-    }
     a {
       color: #909090;
     }
@@ -101,16 +99,6 @@ const Footer = () => {
       <Container>
         <div className='footerContent'>
           <div className='contentRight'>
-            <Link href='/privacy'>
-              <a>
-                <div className='infomationTerms'>개인정보처리방침</div>
-              </a>
-            </Link>
-            <Link href='/terms'>
-              <a>
-                <div className='serviceTerms'>서비스이용약관</div>
-              </a>
-            </Link>
             <div className='linkWrap'>
               <a
                 href='https://post.naver.com/my.nhn?memberNo=43364200'
