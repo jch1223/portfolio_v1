@@ -124,7 +124,7 @@ const Whoami = props => {
               <tbody>
                 <tr>
                   <th className='year'>
-                    <p>18.11 - 18.05</p>
+                    <p>18.11 - 19.05</p>
                   </th>
                   <td className='con'>
                     <p>코드스테이츠</p>
