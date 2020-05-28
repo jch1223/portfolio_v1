@@ -2,13 +2,16 @@ import Document, { Head, Main, NextScript } from 'next/document';
 // Import styled components ServerStyleSheet
 import { ServerStyleSheet } from 'styled-components';
 
+const APP_NAME = 'next-pwa example';
+const APP_DESCRIPTION = 'This is an example of using next-pwa plugin';
+
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     // Step 1: Create an instance of ServerStyleSheet
     const sheet = new ServerStyleSheet();
 
     // Step 2: Retrieve styles from components in the page
-    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
+    const page = renderPage((App) => (props) => sheet.collectStyles(<App {...props} />));
 
     // Step 3: Extract the styles as <style> tags
     const styleTags = sheet.getStyleElement();
@@ -21,6 +24,23 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          {/* pwa 예제 테그 */}
+          <meta name='application-name' content={APP_NAME} />
+          <meta name='apple-mobile-web-app-capable' content='yes' />
+          <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+          <meta name='apple-mobile-web-app-title' content={APP_NAME} />
+          <meta name='description' content={APP_DESCRIPTION} />
+          <meta name='format-detection' content='telephone=no' />
+          <meta name='mobile-web-app-capable' content='yes' />
+          <meta name='theme-color' content='#FFFFFF' />
+          <meta
+            name='viewport'
+            content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover'
+          />
+
+          <link rel='apple-touch-icon' sizes='180x180' href='/icons/apple-touch-icon.png' />
+          <link rel='manifest' href='/manifest.json' />
+          <link rel='shortcut icon' href='/icons/favicon.ico' />
           {/* Step 5: Output the styles in the head  */}
           <meta charSet='utf-8' />
           <meta name='viewport' content='initial-scale=1.0, width=device-width' />
