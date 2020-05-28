@@ -4,7 +4,7 @@ import Container from '../../components/Container';
 import ContentTop from '../../components/ContentTop';
 import TabTop from '../../components/TabTop';
 
-const Project = props => {
+const Project = (props) => {
   const [focus, setFocus] = useState('intro');
   const [subFocus, setSubFocus] = useState('project');
 
@@ -17,9 +17,7 @@ const Project = props => {
         mImg={'top_banner.jpg'}
       ></ContentTop>
 
-      <Container>
-        <TabTop></TabTop>
-      </Container>
+      <Container></Container>
     </Layout>
   );
 };

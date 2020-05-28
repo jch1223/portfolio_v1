@@ -20,7 +20,7 @@ const Index = () => {
 
     function getSize() {
       return {
-        width: isClient ? window.innerWidth : undefined
+        width: isClient ? window.innerWidth : undefined,
       };
     }
 
@@ -57,10 +57,7 @@ const Index = () => {
                 delay={500}
                 animateOnce={true}
               >
-                <div id='copy2'>
-                  DEVELOPER <br />
-                  JANG CHUL HEE
-                </div>
+                <div id='copy2'> 타이틀</div>
               </ScrollAnimation>
             </div>
           </Container>
@@ -77,9 +74,7 @@ const Index = () => {
           <Container>
             <div className='secondCopy'>
               <ScrollAnimation className='copy1' offset={0} animateIn='fadeInUp' animateOnce={true}>
-                <div>
-                  책임감, 성실, 소통을 중요시 생각하는 <br></br>
-                </div>
+                <div>타이틀</div>
               </ScrollAnimation>
               <ScrollAnimation
                 className='copy2'
@@ -88,7 +83,7 @@ const Index = () => {
                 delay={400}
                 animateOnce={true}
               >
-                <div>JANG CHUL HEE</div>
+                <div>타이틀</div>
               </ScrollAnimation>
               <ScrollAnimation
                 className='copy3'
@@ -97,30 +92,12 @@ const Index = () => {
                 delay={800}
                 animateOnce={true}
               >
-                <div>성장하는 개발자가 되기 위해 블로그와 TIL을 작성하고 있습니다.</div>
+                <div>내용</div>
               </ScrollAnimation>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1000} animateOnce={true}>
-                <div style={{ marginBottom: '10px' }}>
-                  {config.blog && (
-                    <a style={{ marginRight: '10px' }} href={config.blog} target='_blank'>
-                      <IndexButton>Blog</IndexButton>
-                    </a>
-                  )}
-
-                  {config.til && (
-                    <a style={{ marginRight: '10px' }} href={config.til} target='_blank'>
-                      <IndexButton>TIL</IndexButton>
-                    </a>
-                  )}
-                </div>
+                <div style={{ marginBottom: '10px' }}>부재</div>
 
                 <div>
-                  {config.github && (
-                    <a style={{ marginRight: '10px' }} href={config.github} target='_blank'>
-                      <IndexButton>Github</IndexButton>
-                    </a>
-                  )}
-
                   <Link href='/intro/whoami'>
                     <IndexButton>소개</IndexButton>
                   </Link>
@@ -139,13 +116,10 @@ const Index = () => {
           <div className='rightContent'>
             <div className='brandInfo'>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={400} animateOnce={true}>
-                <h1>PROJECT</h1>
+                <h1>타이틀</h1>
               </ScrollAnimation>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={800} animateOnce={true}>
-                <div className='desc'>
-                  <p>기술을 학습 할 때 해당 기술의 docs를 중점으로 학습합니다.</p>
-                  <p>에러 핸들링은 stackover flow와 해당 기술의 github issue페이지를 참고합니다.</p>
-                </div>
+                <div className='desc'>내용</div>
               </ScrollAnimation>
               <ScrollAnimation offset={0} animateIn='fadeInUp' delay={1200} animateOnce={true}>
                 <Link href='/intro/project'>
